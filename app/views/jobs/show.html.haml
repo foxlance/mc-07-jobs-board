@@ -1,0 +1,15 @@
+.panel.panel-default
+  .panel-heading 
+    %h2= @job.title
+  .panel-body
+    %h3 Description
+    %p= @job.description
+    %h3 Company
+    %p= @job.company
+    %h3 URL
+    %p= link_to @job.url, @job.url, target: '_blank'
+  .panel-footer
+    .links
+      = link_to "Back", root_path, class: 'btn btn-default'
+      = link_to "Edit", edit_job_path(@job), class: 'btn btn-default'
+      = link_to "Destroy", job_path(@job), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-default'

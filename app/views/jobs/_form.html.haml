@@ -1,0 +1,17 @@
+- if @job.errors.size
+  %p
+    %strong
+      = pluralize(@job.errors.size, "Error")
+      prevented this page from saving.
+= simple_form_for @job, html: {class: 'form-horizontal'} do |f|
+  = f.input :category_id, collection: Category.all, prompt: 'Choose Job Category', input_html: {class: 'form-control'}
+  %br
+  = f.input :title, input_html: {class: 'form-control'}
+  %br
+  = f.input :description, input_html: {class: 'form-control'}
+  %br
+  = f.input :company, input_html: {class: 'form-control'}
+  %br
+  = f.input :url, input_html: {class: 'form-control'}
+  %br
+  = f.button :submit, class: 'btn btn-default'

@@ -1,1 +1,8 @@
-%h1 Jobs Board
+.panel.panel-default
+  .panel-heading 
+    %h1 Jobs Board
+  .panel-body
+    - @jobs.each do |job|
+      %h3= link_to job.title, job_path(job)
+      %p= job.description
+    
